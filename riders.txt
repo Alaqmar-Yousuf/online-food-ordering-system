@@ -1,0 +1,64 @@
+Rider Credentials:
+======================
+
+Rider ID: 1
+Username: rider_1
+Password: password123
+
+Rider ID: 2
+Username: rider_2
+Password: password123
+
+Rider ID: 3
+Username: rider_3
+Password: password123
+
+Rider ID: 4
+Username: rider_4
+Password: password123
+
+Rider ID: 5
+Username: rider_5
+Password: password123
+
+Rider ID: 6
+Username: rider_6
+Password: password123
+
+Rider ID: 7
+Username: rider_7
+Password: password123
+
+Rider ID: 8
+Username: rider_8
+Password: password123
+
+Rider ID: 9
+Username: rider_9
+Password: password123
+
+Rider ID: 10
+Username: rider_10
+Password: password123
+
+Rider ID: 11
+Username: rider_11
+Password: password123
+
+Rider ID: 12
+Username: rider_12
+Password: password123
+
+Rider ID: 13
+Username: rider_13
+Password: password123
+
+Rider ID: 14
+Username: rider_14
+Password: password123
+
+Rider ID: 15
+Username: rider_15
+Password: password123
+
+

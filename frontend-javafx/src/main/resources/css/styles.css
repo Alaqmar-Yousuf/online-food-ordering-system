@@ -1,0 +1,270 @@
+.root {
+    -fx-background-color: #1a1a2e;
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+    -fx-font-smoothing-type: lcd;
+}
+
+/* Typography Tokens */
+.title-text {
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-fill: #ffffff;
+    -fx-text-fill: #ffffff;
+    -fx-letter-spacing: -0.5px;
+}
+
+.subtitle-text {
+    -fx-font-size: 15px;
+    -fx-fill: #aaaaaa;
+    -fx-text-fill: #aaaaaa;
+}
+
+/* Main FoodPanda Theme Colors */
+.primary-color {
+    -fx-background-color: #D70F64;
+}
+
+/* Premium Buttons (Pill-shaped) */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom right, #D70F64, #E01E75);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-cursor: hand;
+    -fx-padding: 12 24;
+    -fx-effect: dropshadow(three-pass-box, rgba(215, 15, 100, 0.4), 15, 0, 0, 4);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #E01E75, #FF2B8B);
+    -fx-effect: dropshadow(three-pass-box, rgba(215, 15, 100, 0.6), 20, 0, 0, 6);
+}
+
+.primary-button:pressed {
+    -fx-background-color: #C00A56;
+    -fx-effect: none;
+    -fx-translate-y: 2px;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+
+/* Status Badges */
+.status-badge-pending {
+    -fx-background-color: #FFF3E0;
+    -fx-text-fill: #E65100;
+    -fx-padding: 4 12;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+}
+.status-badge-preparing {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #1565C0;
+    -fx-padding: 4 12;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+}
+.status-badge-delivered {
+    -fx-background-color: #E8F5E9;
+    -fx-text-fill: #2E7D32;
+    -fx-padding: 4 12;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+}
+
+/* Card Styling (Glassmorphic & Premium Soft Shadow) */
+.food-card {
+    -fx-background-color: #16213e;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 15, 0, 0, 6);
+    -fx-cursor: hand;
+}
+
+.food-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 25, 0, 0, 8);
+    -fx-translate-y: -4px;
+}
+
+.card-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #ffffff;
+}
+
+.card-price {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #D70F64;
+}
+
+/* Input Fields */
+.custom-text-field {
+    -fx-background-color: #16213e;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #2a2a4a;
+    -fx-padding: 12 18;
+    -fx-font-size: 14px;
+}
+
+.custom-text-field:focused {
+    -fx-background-color: #1a1a2e;
+    -fx-border-color: #D70F64;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(three-pass-box, rgba(215, 15, 100, 0.2), 10, 0, 0, 0);
+}
+
+.link-text {
+    -fx-text-fill: #D70F64;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.link-text:hover {
+    -fx-underline: true;
+}
+
+/* Sidebar / Cart Area */
+.sidebar {
+    -fx-background-color: #0f0f1a;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, -4, 0);
+}
+
+/* Header Bar */
+.header-bar {
+    -fx-background-color: #0f0f1a;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 15, 0, 0, 2);
+}
+
+/* ScrollPane transparent & Modern Scrollbars */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #2a2a4a;
+    -fx-background-radius: 10;
+}
+.scroll-bar:vertical .thumb:hover, .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #3a3a5a;
+}
+
+/* Cart List Cell Styling */
+.list-cell {
+    -fx-background-color: #16213e;
+    -fx-background-radius: 8;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 12;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+.list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-effect: none;
+}
+.list-view {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+/* TableView Premium Styling (Admin) */
+.table-view {
+    -fx-background-color: #16213e;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-border-color: transparent;
+}
+.table-view .column-header-background {
+    -fx-background-color: #0f0f1a;
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 0 0 5 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 15;
+}
+.table-row-cell {
+    -fx-background-color: #16213e;
+    -fx-border-color: #2a2a4a;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 0;
+}
+.table-row-cell:hover {
+    -fx-background-color: #1a1a2e;
+}
+.table-row-cell:odd {
+    -fx-background-color: #121c33;
+}
+.table-view .table-cell {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 8 15;
+}
+
+/* Category Chips */
+.category-chip {
+    -fx-background-color: white;
+    -fx-text-fill: #64748B;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #E2E8F0;
+    -fx-cursor: hand;
+}
+.category-chip:hover {
+    -fx-background-color: #F1F5F9;
+}
+.category-chip.active {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: white;
+    -fx-border-color: #1E293B;
+}
+
+/* Combo Box (Dropdowns) */
+.combo-box {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 8;
+    -fx-padding: 2;
+}
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1E293B;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-background-radius: 8;
+}

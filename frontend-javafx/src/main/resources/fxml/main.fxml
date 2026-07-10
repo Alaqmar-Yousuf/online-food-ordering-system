@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane minHeight="700.0" prefWidth="1100.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foodorder.client.controller.MainController">
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="header-bar" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #D70F64;" text="FoodPanda Clone" />
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="userNameLabel" styleClass="subtitle-text" text="Welcome, User">
+                            <HBox.margin>
+                                <Insets right="20.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#showOrders" styleClass="secondary-button" text="📦 Track Orders">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="secondary-button" text="Logout" />
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Center Content (Dynamic) -->
+    <center>
+        <StackPane fx:id="contentArea" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </BorderPane.margin>
+            <!-- Default Home View: Restaurants -->
+            <VBox fx:id="restaurantsView" spacing="20.0">
+                <children>
+                    <Label styleClass="title-text" text="Discover New Flavours" />
+                    <HBox fx:id="categoryBox" spacing="12.0" alignment="CENTER_LEFT">
+                        <!-- Chips loaded via Controller -->
+                    </HBox>
+                    <ScrollPane fitToWidth="true" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+                        <content>
+                            <VBox fx:id="restaurantsGrid" alignment="TOP_LEFT" spacing="25.0" />
+                        </content>
+                    </ScrollPane>
+                </children>
+            </VBox>
+
+            <!-- Menu View (Hidden by default) -->
+            <VBox fx:id="menuView" spacing="15.0" visible="false">
+                <children>
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <Button mnemonicParsing="false" onAction="#showRestaurants" styleClass="secondary-button" text="&lt; Back" />
+                        <Label fx:id="restaurantNameLabel" styleClass="title-text" text="Restaurant Menu" />
+                    </HBox>
+                    <ScrollPane fitToWidth="true" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+                        <content>
+                            <FlowPane fx:id="menuGrid" alignment="TOP_CENTER" hgap="25.0" vgap="25.0" />
+                        </content>
+                    </ScrollPane>
+                </children>
+            </VBox>
+
+            <!-- Orders View (Hidden by default) -->
+            <VBox fx:id="ordersView" spacing="15.0" visible="false">
+                <children>
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <Button mnemonicParsing="false" onAction="#showRestaurants" styleClass="secondary-button" text="&lt; Back to Restaurants" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label styleClass="title-text" text="My Orders" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#loadUserOrders" styleClass="secondary-button" text="↻ Refresh" />
+                    </HBox>
+                    <ScrollPane fitToWidth="true" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+                        <content>
+                            <VBox fx:id="ordersListContainer" alignment="TOP_CENTER" spacing="15.0">
+                                <padding><Insets top="10" bottom="10" left="10" right="10"/></padding>
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                </children>
+            </VBox>
+        </StackPane>
+    </center>
+
+    <!-- Right Sidebar: Cart -->
+    <right>
+        <VBox prefWidth="350.0" spacing="20.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+            </padding>
+            <children>
+                <Label styleClass="title-text" text="Your Cart" />
+                <ListView fx:id="cartListView" prefHeight="400.0" styleClass="list-view" VBox.vgrow="ALWAYS" />
+                
+                <VBox spacing="15.0" style="-fx-border-color: #EEEEEE; -fx-border-width: 1.5 0 0 0; -fx-padding: 20 0 0 0;">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Total" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="totalLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #D70F64;" text="\$0.00" />
+                    </HBox>
+                    <Label fx:id="statusLabel" wrapText="true" />
+                    <Button mnemonicParsing="false" onAction="#checkout" maxWidth="Infinity" styleClass="primary-button" text="Proceed to Checkout" />
+                </VBox>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>

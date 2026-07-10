@@ -1,0 +1,17 @@
+com\foodorder\client\MainApp.class
+com\foodorder\client\controller\AdminController.class
+com\foodorder\client\controller\CheckoutController$2.class
+com\foodorder\client\controller\MainController$1.class
+com\foodorder\client\controller\RiderDashboardController$2.class
+com\foodorder\client\controller\RestaurantDashboardController$1.class
+com\foodorder\client\controller\CheckoutController.class
+com\foodorder\client\controller\MainController.class
+module-info.class
+com\foodorder\client\controller\LoginController.class
+com\foodorder\client\controller\RestaurantDashboardController.class
+com\foodorder\client\controller\RiderDashboardController$1.class
+com\foodorder\client\network\ApiClient.class
+com\foodorder\client\controller\MainController$CartItem.class
+com\foodorder\client\controller\RiderDashboardController.class
+com\foodorder\client\controller\CheckoutController$1.class
+com\foodorder\client\controller\RegisterController.class
