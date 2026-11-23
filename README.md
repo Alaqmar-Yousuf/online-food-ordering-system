@@ -1,5 +1,5 @@
-# Food Ordering & Delivery Management System
-### Enterprise Full-Stack Logistics & Restaurant Management Platform
+# 🍔 Food Ordering & Delivery Management System
+### 4th Semester Database Management Systems (DBMS) Capstone Project
 
 <div align="center">
 
@@ -35,6 +35,7 @@
 9. [Project Directory Structure](#-project-directory-structure)
 10. [Troubleshooting & FAQs](#-troubleshooting--faqs)
 11. [PDF Documentation Report](#-pdf-documentation-report)
+12. [License & Academic Information](#-license--academic-information)
 
 ---
 
@@ -188,8 +189,8 @@ All accounts are pre-seeded automatically. You do not need to register manually 
 | **Delivery Rider** | `rider_1` to `rider_15` | `password123` | Available Deliveries Queue, Claim Delivery (Race Protected), Milestone Progression |
 | **Restaurant Manager** | `owner_thegoldenslice`<br/>`owner_burgerforge`<br/>*(30 accounts)* | `password123` | Live Kitchen Orders Feed, Menu Management & Pricing, Mark Preparing / Ready |
 
-> The full list of all 30 restaurant owner logins is in [`credentials.txt`](file:///D:/University/4th%20semester/dbms%20project/credentials.txt).  
-> The rider directory is in [`riders.txt`](file:///D:/University/4th%20semester/dbms%20project/riders.txt).
+> The full list of all 30 restaurant owner logins is in [`credentials.txt`](credentials.txt).  
+> The rider directory is in [`riders.txt`](riders.txt).
 
 ---
 
@@ -381,21 +382,18 @@ Ctrl + C
 
 ---
 
-<<<<<<< HEAD
 ## 📄 PDF Documentation Report
 
-A complete 4-page technical architecture and code report is available in the root folder:
-* **File:** [`Food_Ordering_System_DBMS_Documentation.pdf`](file:///D:/University/4th%20semester/dbms%20project/Food_Ordering_System_DBMS_Documentation.pdf)
+A complete technical architecture and DBMS report is available in the project root:
+* **File:** [`Food_Ordering_System_DBMS_Documentation.pdf`](Food_Ordering_System_DBMS_Documentation.pdf)
 * **Contents:** System Topology, 3NF Entity Relationship Model, JPQL Aggregation Queries, In-depth Critical Sections & Concurrency Analysis, Code Walkthrough, and Verification Instructions.
 
 ---
 
-## 🛡️ License
+## 🛡️ License & Academic Information
+
+Developed by **Alaqmar Yousuf** as a capstone project for **CS2104: Database Management Systems (4th Semester)**. Available for academic review, demonstration, and educational purposes.
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 Copyright (c) 2026 Alaqmar Yousuf. All rights reserved.
-=======
-## 🛡️ License & Academic Information
-Developed as a capstone project for **CS2104: Database Management Systems (4th Semester)**. Available for academic review, demonstration, and educational purposes.
->>>>>>> 30d7d279af887f740dad860d9a58fed186126dd5
