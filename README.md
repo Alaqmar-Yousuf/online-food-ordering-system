@@ -381,6 +381,7 @@ Ctrl + C
 
 ---
 
+<<<<<<< HEAD
 ## 📄 PDF Documentation Report
 
 A complete 4-page technical architecture and code report is available in the root folder:
@@ -394,3 +395,7 @@ A complete 4-page technical architecture and code report is available in the roo
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 Copyright (c) 2026 Alaqmar Yousuf. All rights reserved.
+=======
+## 🛡️ License & Academic Information
+Developed as a capstone project for **CS2104: Database Management Systems (4th Semester)**. Available for academic review, demonstration, and educational purposes.
+>>>>>>> 30d7d279af887f740dad860d9a58fed186126dd5
