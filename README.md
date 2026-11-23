@@ -380,16 +380,6 @@ In the terminal running the server, press:
 Ctrl + C
 ```
 
----
-
-## 📄 PDF Documentation Report
-
-A complete technical architecture and DBMS report is available in the project root:
-* **File:** [`Food_Ordering_System_DBMS_Documentation.pdf`](Food_Ordering_System_DBMS_Documentation.pdf)
-* **Contents:** System Topology, 3NF Entity Relationship Model, JPQL Aggregation Queries, In-depth Critical Sections & Concurrency Analysis, Code Walkthrough, and Verification Instructions.
-
----
-
 ## 🛡️ License & Academic Information
 
 Developed by **Alaqmar Yousuf** as a capstone project for **CS2104: Database Management Systems (4th Semester)**. Available for academic review, demonstration, and educational purposes.
