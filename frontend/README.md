@@ -1,16 +1,26 @@
-# React + Vite
+# Food Ordering System - Web Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, responsive web application for the Food Ordering & Delivery Management System built with **React**, **Vite**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## Features
+- **Customer Portal**: Browse restaurant menus, add items to cart, place orders, and track order status in real time.
+- **Restaurant Dashboard**: Real-time incoming order stream, status management (Pending -> Preparing -> Ready for Pickup).
+- **Rider Portal**: View available deliveries, accept deliveries, and update delivery progress (Delivering -> Delivered).
+- **Admin Dashboard**: System-wide revenue metrics, customer activity analysis, and rider performance statistics.
+- **Real-Time Updates**: WebSocket (STOMP over SockJS) communication for instant status synchronization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Quick Start
 
-## React Compiler
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Start Development Server
+```bash
+npm run dev
+```
+The application will launch at `http://localhost:5173`.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment & Proxy
+By default, API requests point to `http://localhost:8080/api/v1` and WebSocket connects to `http://localhost:8080/ws`. Ensure the Spring Boot backend is running before using the frontend.

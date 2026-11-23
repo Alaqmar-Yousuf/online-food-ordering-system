@@ -6,7 +6,7 @@ import okhttp3.*;
 import java.io.IOException;
 
 public class ApiClient {
-    private static final String BASE_URL = "http://localhost:8080/api/v1";
+    private static final String BASE_URL = "http://localhost:8081/api/v1";
     private static final OkHttpClient client = new OkHttpClient();
     private static final Gson gson = new Gson();
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");

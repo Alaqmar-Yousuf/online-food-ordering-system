@@ -11,6 +11,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,9 +52,14 @@ public class RiderController {
         return ResponseEntity.ok(myDeliveries);
     }
 
+    /**
+     * Critical Section: Concurrent Delivery Acceptance.
+     * Synchronized & Transactional to prevent race condition when two riders accept the same order simultaneously.
+     */
     @PutMapping("/orders/{orderId}/accept")
     @PreAuthorize("hasRole('RIDER')")
-    public ResponseEntity<?> acceptOrder(@PathVariable Long orderId) {
+    @Transactional(rollbackFor = Exception.class)
+    public synchronized ResponseEntity<?> acceptOrder(@PathVariable Long orderId) {
         User rider = getAuthenticatedRider();
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found"));
@@ -82,6 +88,7 @@ public class RiderController {
 
     @PutMapping("/orders/{orderId}/status")
     @PreAuthorize("hasRole('RIDER')")
+    @Transactional
     public ResponseEntity<?> updateDeliveryStatus(@PathVariable Long orderId, @RequestParam OrderStatus status) {
         User rider = getAuthenticatedRider();
         Order order = orderRepository.findById(orderId)

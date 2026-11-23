@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import api from '../services/api';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';
+import { WS_URL } from '../services/config';
 import { Store, Utensils, Package, Edit, Trash2, Plus, Clock, CheckCircle, Truck, X } from 'lucide-react';
 
 const RestaurantDashboard = () => {
@@ -46,7 +47,7 @@ const RestaurantDashboard = () => {
   useEffect(() => {
     if (restaurant?.id) {
       const client = new Client({
-        webSocketFactory: () => new SockJS('http://localhost:8080/ws'),
+        webSocketFactory: () => new SockJS(WS_URL),
         reconnectDelay: 5000,
       });
 

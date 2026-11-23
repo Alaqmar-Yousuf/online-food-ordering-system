@@ -4,6 +4,7 @@ import api from '../services/api';
 import { AuthContext } from '../context/AuthContext';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';
+import { WS_URL } from '../services/config';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -45,7 +46,7 @@ const UserOrders = () => {
     // Setup WebSocket connection
     if (user?.id) {
       const client = new Client({
-        webSocketFactory: () => new SockJS('http://localhost:8080/ws'),
+        webSocketFactory: () => new SockJS(WS_URL),
         debug: function (str) {
           console.log(str);
         },

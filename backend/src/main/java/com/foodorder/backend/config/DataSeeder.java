@@ -57,6 +57,19 @@ public class DataSeeder implements CommandLineRunner {
             System.out.println("Created Default Admin User -> Username: admin | Password: admin123");
         }
 
+        if (!userRepository.existsByUsername("customer")) {
+            com.foodorder.backend.entity.User customerUser = new com.foodorder.backend.entity.User(
+                "customer", 
+                passwordEncoder.encode("customer123"), 
+                "customer@foodpanda.com", 
+                com.foodorder.backend.enums.UserRole.ROLE_USER
+            );
+            customerUser.setAddress("42 Innovation Blvd, Tech District");
+            customerUser.setPhone("+1-555-0199");
+            userRepository.save(customerUser);
+            System.out.println("Created Default Customer User -> Username: customer | Password: customer123");
+        }
+
         StringBuilder ridersLog = new StringBuilder();
         ridersLog.append("Rider Credentials:\n======================\n\n");
         for (int i = 1; i <= 15; i++) {

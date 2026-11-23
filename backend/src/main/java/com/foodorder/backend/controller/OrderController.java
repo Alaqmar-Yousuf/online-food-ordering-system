@@ -12,6 +12,7 @@ import com.foodorder.backend.security.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
@@ -37,7 +38,12 @@ public class OrderController {
     @Autowired
     private MenuItemRepository menuItemRepository;
 
+    /**
+     * Critical Section: Multi-entity transaction (Order, OrderItems, Payment).
+     * Enforces ACID guarantees: rolls back entirely if any item fails or price validation fails.
+     */
     @PostMapping
+    @Transactional(rollbackFor = Exception.class)
     public ResponseEntity<?> placeOrder(@Valid @RequestBody OrderRequest orderRequest) {
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userRepository.findById(userDetails.getId()).orElse(null);
@@ -144,6 +150,7 @@ public class OrderController {
 
     @PutMapping("/admin/{id}/status")
     @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    @Transactional
     public ResponseEntity<?> updateOrderStatus(@PathVariable Long id, @RequestParam String status) {
         Optional<Order> orderOpt = orderRepository.findById(id);
         if (!orderOpt.isPresent()) {
@@ -166,6 +173,7 @@ public class OrderController {
 
     @PutMapping("/{id}/restaurant-status")
     @org.springframework.security.access.prepost.PreAuthorize("hasRole('RESTAURANT')")
+    @Transactional
     public ResponseEntity<?> updateRestaurantOrderStatus(@PathVariable Long id, @RequestParam String status) {
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         
