@@ -24,6 +24,8 @@ export const AuthProvider = ({ children }) => {
       navigate('/app/restaurant-dashboard');
     } else if (userData.roles && userData.roles.includes('ROLE_RIDER')) {
       navigate('/app/rider-dashboard');
+    } else if (userData.roles && userData.roles.includes('ROLE_ADMIN')) {
+      navigate('/app/admin');
     } else {
       navigate('/app');
     }

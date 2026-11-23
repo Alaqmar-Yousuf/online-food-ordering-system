@@ -1,5 +1,5 @@
 # Food Ordering & Delivery Management System
-### 4th Semester Database Management Systems (DBMS) Course Project
+### Enterprise Full-Stack Logistics & Restaurant Management Platform
 
 <div align="center">
 
@@ -48,7 +48,7 @@
 > * **Automatic Data Seeding:** `DataSeeder.java` automatically seeds **30 restaurants**, hundreds of menu items, an **administrator account**, **15 delivery riders**, and a **test customer account**.
 > * **Persistent Storage:** Data is saved to the local file `./data/food_order_db.mv.db` and persists across backend restarts.
 > * **Browser Database GUI:** Inspect and query your tables live at `http://localhost:8081/h2-console`.
-> * **SQL Server Mode Preserved:** When required for university submission or grading on Microsoft SQL Server, toggle the profile with one command (`-Dspring-boot.run.profiles=sqlserver`).
+> * **SQL Server Mode Preserved:** When deploying or evaluating against Microsoft SQL Server, toggle the profile with one command (`-Dspring-boot.run.profiles=sqlserver`).
 
 ---
 
@@ -195,7 +195,7 @@ All accounts are pre-seeded automatically. You do not need to register manually 
 
 ## 🔒 Critical Sections & Concurrency Architecture
 
-In Database Management Systems, coordinating concurrent access to shared mutable resources is a core grading criterion. This project implements strict concurrency controls for three primary business bottlenecks:
+In modern high-throughput distributed systems, coordinating concurrent access to shared mutable resources without data corruption is essential. This project implements strict concurrency controls for three primary business bottlenecks:
 
 ### 1. Atomic Order Placement (`OrderController.placeOrder`)
 * **Hazard:** An order placement writes to `orders`, `order_items`, and `payments`. If a network timeout or database failure happens halfway, orphaned orders or unpaid records would be committed, violating the **Atomicity** and **Consistency** tenets of ACID.
@@ -278,7 +278,7 @@ The `OrderRepository` uses high-performance JPQL aggregate queries for managemen
 
 ### Authentication (`/api/v1/auth`)
 * `POST /api/v1/auth/login` - Authenticate user, returns JWT and user role.
-* `POST /api/v1/auth/signup` - Register a new customer account.
+* `POST /api/v1/auth/register` - Register a new customer account.
 
 ### Restaurants & Menus (`/api/v1/restaurants`)
 * `GET /api/v1/restaurants` - List all restaurants (public).
@@ -383,11 +383,14 @@ Ctrl + C
 
 ## 📄 PDF Documentation Report
 
-A complete 4-page academic and technical report is available in the root folder:
+A complete 4-page technical architecture and code report is available in the root folder:
 * **File:** [`Food_Ordering_System_DBMS_Documentation.pdf`](file:///D:/University/4th%20semester/dbms%20project/Food_Ordering_System_DBMS_Documentation.pdf)
 * **Contents:** System Topology, 3NF Entity Relationship Model, JPQL Aggregation Queries, In-depth Critical Sections & Concurrency Analysis, Code Walkthrough, and Verification Instructions.
 
 ---
 
-## 🛡️ License & Academic Information
-Developed as a capstone project for **CS2104: Database Management Systems (4th Semester)**. Available for academic review, demonstration, and educational purposes.
+## 🛡️ License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+Copyright (c) 2026 Alaqmar Yousuf. All rights reserved.
