@@ -381,13 +381,5 @@ Ctrl + C
 
 ---
 
-## 📄 PDF Documentation Report
-
-A complete 4-page academic and technical report is available in the root folder:
-* **File:** [`Food_Ordering_System_DBMS_Documentation.pdf`](file:///D:/University/4th%20semester/dbms%20project/Food_Ordering_System_DBMS_Documentation.pdf)
-* **Contents:** System Topology, 3NF Entity Relationship Model, JPQL Aggregation Queries, In-depth Critical Sections & Concurrency Analysis, Code Walkthrough, and Verification Instructions.
-
----
-
 ## 🛡️ License & Academic Information
 Developed as a capstone project for **CS2104: Database Management Systems (4th Semester)**. Available for academic review, demonstration, and educational purposes.
